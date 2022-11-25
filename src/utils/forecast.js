@@ -8,7 +8,7 @@ const forecast = (coordinateA, coordinateB, callback ) => {
         } else if(response.body.error) {
             callback('Couldn\'t find location. Try another one!', undefined);
         } else {
-            callback(undefined, 'It is currently ' + response.body.current.temperature + ' degress out. There is a ' + response.body.current.feelslike + '% chance of rain.')
+            callback(undefined, 'It is currently ' + response.body.current.temperature + ' degress out. Feels like ' + response.body.current.feelslike + '.')
         }
     })
 }

@@ -8,16 +8,9 @@ const forecast = (coordinateA, coordinateB, callback ) => {
         } else if(response.body.error) {
             callback('Couldn\'t find location. Try another one!', undefined);
         } else {
-            console.log('response', response);
-            const { lat, lon, name, region, country} = response.body.location;
-            callback(undefined, {
-                lat: lat,
-                lon: lon,
-                location: `${name}, ${region}, ${country}`
-
-            });
+            callback(undefined, 'It is currently ' + response.body.current.temperature + ' degress out. There is a ' + response.body.current.feelslike + '% chance of rain.')
         }
     })
-};
+}
 
-module.exports = forecast;
+module.exports = forecast

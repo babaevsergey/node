@@ -23,7 +23,7 @@ app.use(express.static(publicDirectoryPath))
 app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather',
-        name: 'Serhii Babaiev'
+        name: 'Serhii Babaiev',
     })
 })
 
@@ -58,11 +58,11 @@ app.get('/weather', (req, res) => {
                 if(error) {
                     console.error(error)
                 }
-
+                console.log('forecastData', forecastData);
                 res.send({
                     forecast: forecastData,
                     location,
-                    address: req.query.address
+                    address: req.query.address,
                 })
             })
         })

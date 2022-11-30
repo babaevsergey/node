@@ -5,7 +5,7 @@ const search = document.querySelector('input')
 const firstMessage = document.querySelector('#firstMessage')
 const secondMessage = document.querySelector('#secondsMessage')
 
-firstMessage.textContent = 'From Javascript'
+firstMessage.textContent = ''
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
